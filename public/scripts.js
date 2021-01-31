@@ -116,3 +116,18 @@ const photosUpload = {
         photoDiv.remove();
     },
 };
+
+const imageGallery = {
+    highlight: document.querySelector(".gallery .highlight > img"),
+    previews: document.querySelectorAll(".gallery-preview img"),
+
+    setImage(e) {
+        const { target } = e;
+        imageGallery.previews.forEach((preview) =>
+            preview.classList.remove("active")
+        );
+        target.classList.add("active");
+
+        imageGallery.highlight.src = target.src;
+    },
+};
