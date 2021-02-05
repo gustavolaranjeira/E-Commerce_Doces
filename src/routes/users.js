@@ -18,10 +18,14 @@ routes.post("/login", sessionValidator.login, sessionControler.login);
 routes.post("/logout", sessionControler.logout);
 
 // //reset password / forgot
-// routes.get("/forgot-password", sessionControler.forgotForm);
-// routes.get("/password-reset", sessionControler.resetForm);
-// routes.post("/forgot-password", sessionControler.forgot);
-// routes.post("/password-reset", sessionControler.reset);
+routes.get("/forgot-password", sessionControler.forgotForm);
+routes.get("/password-reset", sessionControler.resetForm);
+routes.post(
+    "/forgot-password",
+    sessionValidator.forgot,
+    sessionControler.forgot
+);
+routes.post("/password-reset", sessionValidator.reset, sessionControler.reset);
 
 // //user register userController
 routes.get("/register", userControler.registerForm);
@@ -29,6 +33,6 @@ routes.post("/register", userValidator.post, userControler.post);
 
 routes.get("/", onlyUsers, userValidator.show, userControler.show);
 routes.put("/", userValidator.update, userControler.update);
-// routes.delete("/", userControler.delete);
+routes.delete("/", userControler.delete);
 
 module.exports = routes;
