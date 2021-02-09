@@ -1,0 +1,6 @@
+MVC - Model View Controller
+
+Responsabilidades:
+Model - Conversar com o BD
+Controller - Meio de campo & Regras de negócio
+View - Apresentação(Front-end)
