@@ -10,12 +10,9 @@
             <input type="text" name="filter"
             placeholder="Busca por Produtos"
             {% if search.term %}
-                value={{search.term}}
+                value="{{search.term}}"
             {% endif %}
-            
             >
-        
-        
         </form>
 
 <nav class="primary">
@@ -37,10 +34,7 @@
                     <a href="/users">Minha Conta</a>
                 </li>
                 <li>
-                    <a href="/buying">Meus pedidos</a>
-                </li>
-                <li>
-                    <a href="/selling">Minhas vendas</a>
+                    <a href="/users/ads">Meus anúncios</a>
                 </li>
                 <li>
                     <form action="/users/logout" method="post">
