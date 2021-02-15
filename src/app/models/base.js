@@ -4,10 +4,10 @@ function find(filters, table) {
   let query = `SELECT * FROM ${table}`;
 
   if (filters) {
-    Object.keys(filters).map((key) => {
+    Object.keys(filters).map(key => {
       query += ` ${key}`;
 
-      Object.keys(filters[key]).map((field) => {
+      Object.keys(filters[key]).map(field => {
         query += ` ${field} = '${filters[key][field]}'`;
       });
     });
@@ -35,12 +35,16 @@ const Base = {
     const results = await find(filters, this.table);
     return results.rows;
   },
+  async findOneWithDeleted(filters) {
+    const results = await find(filters, `${this.table}_with_deleted`);
+    return results.rows[0];
+  },
   async create(fields) {
     try {
       let keys = [],
         values = [];
 
-      Object.keys(fields).map((key) => {
+      Object.keys(fields).map(key => {
         keys.push(key);
         values.push(`'${fields[key]}'`);
       });
@@ -58,7 +62,7 @@ const Base = {
   update(id, fields) {
     try {
       let update = [];
-      Object.keys(fields).map((key) => {
+      Object.keys(fields).map(key => {
         //aqui estamos criando <category_id=($1)>
         const line = `${key} = '${fields[key]}'`;
         update.push(line);
