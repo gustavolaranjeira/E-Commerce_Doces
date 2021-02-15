@@ -1,6 +1,8 @@
 :root {
-  --primary-color: #fd951f;
+  --primary-color: #fff;
   --secondary-color: #1f83fd;
+  --button-base-color: #362312;
+  --text-base-color: #362312;
 }
 
 * {
@@ -32,11 +34,11 @@ footer {
 }
 
 .button {
-  background-color: var(--primary-color);
-  color: white;
+  background-color: white;
+  color: var(--button-base-color);
   display: block;
-  margin: 16px 0px;
-  padding: 12px 16px;
+  margin: 18px 0px;
+  padding: 8px 16px;
   width: 100%;
   border-radius: 4px;
   /*para colocar o botão para baixo*/
@@ -47,9 +49,10 @@ footer {
   text-align: center;
   cursor: pointer;
   transition: all 0.2s;
+  border: solid 2px var(--button-base-color);
 }
 .button:hover {
-  background-color: #d7780b;
+  background-color: rgba(54, 35, 18, 0.3);
 }
 .button.edit {
   background-color: var(--secondary-color);
@@ -67,10 +70,10 @@ footer {
 /*HEADER*/
 header,
 footer {
-  background-color: black;
+  background-color: #362312;
   color: white;
   width: 100%;
-  padding: 32px 0px;
+  padding: 20px 0px;
   text-align: center;
 }
 header div.container {
@@ -120,7 +123,7 @@ nav.primary > ul > li > a:hover {
   color: var(--primary-color);
 }
 nav.primary > ul > li > a > i {
-  margin-right: 8px;
+  margin-right: 2px;
 }
 
 /*PRODUCT FORM*/
@@ -188,7 +191,7 @@ form .item textarea {
 }
 form .item span {
   padding: 8px 16px;
-  background-color: var(--primary-color);
+  background-color: var(--text-base-color);
   border-radius: 16px;
   color: white;
   margin-right: 4px;
@@ -276,7 +279,7 @@ form .item #photos-preview img {
 
 /*Shop*/
 .shop h2 {
-  margin: 48px 0px;
+  margin: 18px 0px;
 }
 
 .shop .items {

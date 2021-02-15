@@ -13,6 +13,6 @@
   letter-spacing: 0.7px;
   text-transform: uppercase;
   font-weight: bold;
-  color: var(--primary-color);
+  color: var(--text-base-color);
   margin-bottom: 16px;
 }
